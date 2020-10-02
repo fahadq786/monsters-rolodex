@@ -9,8 +9,22 @@ class App extends Component {
     super();
     
     this.state = {
-      string: 'Fahad',
-      num: 1
+
+      monsters: [
+        {
+          name: 'Frank'
+        },
+        {
+          name: 'Dracula'
+        },
+        {
+          name: 'Zombie'
+        },
+        {
+          name: 'Jinn'
+        },
+        
+        ]
     };
     
   }
@@ -20,32 +34,13 @@ class App extends Component {
     return(
       
           <div className="App">
-          <header className="App-header">
-            <img src={logo} className="App-logo" alt="logo" />
-            <p>
-              Hello my name is {this.state.string} + {this.state.num}</p>
-              <button onClick={ 
-                  ()=> { 
-                    var newName = '';
 
-                    if (this.state.string === 'Qureshi') {
-                      newName = 'Fahad'
-                    }
-                    else {
-                      newName = 'Qureshi'
-                    }
-                    
-                    this.setState( {
-                      string: newName,
-                      num: this.state.num + 1
-                    })
+          {
+            this.state.monsters.map(monster => 
+              <h1>{monster.name}</h1>
+            )
+          }
 
-                    
-                  }
-                  }>
-                    Change Text
-                </button>
-          </header>
         </div>
       
       
